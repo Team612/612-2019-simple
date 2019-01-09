@@ -5,6 +5,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import frc.team612.RobotMap;
+import frc.team612.commands.Drive;
 
 public class DriveTrain extends Subsystem {
 
@@ -14,10 +15,10 @@ public class DriveTrain extends Subsystem {
     public static WPI_TalonSRX Talon_FL=new WPI_TalonSRX(RobotMap.Talon_FL);
     public static WPI_TalonSRX Talon_RR=new WPI_TalonSRX(RobotMap.Talon_RR);
     public static WPI_TalonSRX Talon_RL=new WPI_TalonSRX(RobotMap.Talon_RL);
-    public static MecanumDrive mecanumdrive= new MecanumDrive(Talon_FL,Talon_RL,Talon_FR,Talon_RR);
-    public static MecanumDrive getMecDrive(){
-        return mecanumdrive;
-    }
+    //public static MecanumDrive mecanumdrive= new MecanumDrive(Talon_FL,Talon_RL,Talon_FR,Talon_RR);
+   // public static MecanumDrive getMecDrive(){
+     //   return mecanumdrive;
+    //}
     public static WPI_TalonSRX getTalon(int num) {
         switch(num){
             case 1: return Talon_FR;
@@ -30,6 +31,7 @@ public class DriveTrain extends Subsystem {
 
 
     public void initDefaultCommand() {
+        setDefaultCommand(new Drive());
         // TODO: Set the default command, if any, for a subsystem here. Example:
         //    setDefaultCommand(new MySpecialCommand());
     }

@@ -1,30 +1,15 @@
 package frc.team612.commands;
 
-import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.AnalogInput;
 import frc.team612.Robot;
 
 
-public class Drive extends Command {
-    private double x = 0;
-    private double y = 0;
-    private double r = 0;
-    private double m = 0;
-    private double a = 0;
-    public void getInput(){
-        x = Robot.oi.driver.getX(GenericHID.Hand.kLeft);
-        y = Robot.oi.driver.getY(GenericHID.Hand.kLeft);
-        r = Robot.oi.driver.getX(GenericHID.Hand.kRight);
-    }
-    public void calc(){
-       m = Math.abs(x*x + y*y);
-       a = Math.atan2(y,x);
-       a = a*(Math.PI/180);
-    }
-    public Drive() {
+public class ReadLine extends Command {
+    public ReadLine() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(Robot.driveTrain);
+        requires(Robot.linetracker);
     }
 
 
@@ -44,18 +29,12 @@ public class Drive extends Command {
      */
     @Override
     protected void execute() {
-        System.out.println(Robot.oi.driver.getY(GenericHID.Hand.kLeft));
-        if (Robot.oi.isTankDrive) {
-            Robot.driveTrain.getTalon(2).set(Robot.oi.driver.getY(GenericHID.Hand.kLeft));
-            Robot.driveTrain.getTalon(1).set(Robot.oi.driver.getY(GenericHID.Hand.kRight));
-          //  Robot.driveTrain.getTalon(3).set(Robot.oi.driver.getY(GenericHID.Hand.kLeft));
-          //  Robot.driveTrain.getTalon(4).set(Robot.oi.driver.getY(GenericHID.Hand.kRight));
-        } else {
-            getInput();
-            calc();
-            //Robot.driveTrain.getMecDrive().drivePolar(m, a, r);
-        }
+        //System.out.println(Robot.linetracker.frontLeftLT.getVoltage());
+        //System.out.println(Robot.linetracker.frontRightLT.getVoltage());
+        //System.out.println(Robot.linetracker.backCenterLT.getVoltage());
     }
+
+
     /**
      * <p>
      * Returns whether this command is finished. If it is, then the command will be removed and

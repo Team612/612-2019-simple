@@ -15,8 +15,8 @@ package frc.team612;
  */
 public class RobotMap 
 {
-    public static int Talon_FR=1;
-    public static int Talon_FL=2;
+    public static int Talon_FR=7;
+    public static int Talon_FL=1;
     public static int Talon_RR=3;
     public static int Talon_RL=4;
     public static int driver=0;
@@ -24,6 +24,9 @@ public class RobotMap
     public static int belt_1 = 5;
     public static int belt_2 = 6;
     public static int flywheel = 7;
+    public static int frontLeftLineTracker = 0;
+    public static int frontRightLineTracker = 1;
+    public static int backCenterLineTracker = 2;
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static int leftMotor = 1;

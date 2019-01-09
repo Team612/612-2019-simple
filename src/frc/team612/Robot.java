@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team612.subsystems.ConveyorBelt;
 import frc.team612.subsystems.DriveTrain;
+import frc.team612.subsystems.LineTracker;
 import frc.team612.subsystems.Shooter;
 
 /**
@@ -34,6 +35,7 @@ public class Robot extends TimedRobot
     private SendableChooser<Command> chooser = new SendableChooser<>();
     public static DriveTrain driveTrain=new DriveTrain();
     public static ConveyorBelt conveyorbelt = new ConveyorBelt();
+    public static LineTracker linetracker = new LineTracker();
     public static Shooter shooter = new Shooter();
     /**
      * This function is run when the robot is first started up and should be
