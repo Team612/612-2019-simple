@@ -25,6 +25,7 @@ public class RobotMap
     public static int Talon_Lift_RL=8;
     public static int driver=0;
     public static int gunner=1;
+    public static int ultrasonic=1;
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static int leftMotor = 1;
