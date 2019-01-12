@@ -9,6 +9,7 @@ public class Lift extends Command {
     public Lift() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+        requires(Robot.robotLift);
     }
 
 

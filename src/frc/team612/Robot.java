@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team612.subsystems.DriveTrain;
+import frc.team612.subsystems.RobotLift;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,7 +31,8 @@ public class Robot extends TimedRobot
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
-    public static DriveTrain driveTrain=new DriveTrain();;
+    public static DriveTrain driveTrain=new DriveTrain();
+    public static RobotLift robotLift=new RobotLift();
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
