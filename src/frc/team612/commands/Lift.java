@@ -1,6 +1,8 @@
 package frc.team612.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.team612.Robot;
+import frc.team612.subsystems.RobotLift;
 
 
 public class Lift extends Command {
@@ -26,7 +28,26 @@ public class Lift extends Command {
      */
     @Override
     protected void execute() {
-
+        if(Robot.oi.driver_backLift_up.get()){
+            RobotLift.getTalon(3).set(1);
+            RobotLift.getTalon(4).set(1);
+        }else if(Robot.oi.driver_backLift_down.get()){
+            RobotLift.getTalon(3).set(-1);
+            RobotLift.getTalon(4).set(-1);
+        }else{
+            RobotLift.getTalon(3).set(0);
+            RobotLift.getTalon(4).set(0);
+        }
+        if(Robot.oi.driver_frontLift_up.get()){
+            RobotLift.getTalon(1).set(1);
+            RobotLift.getTalon(2).set(1);
+        }else if(Robot.oi.driver_frontLift_down.get()){
+            RobotLift.getTalon(1).set(-1);
+            RobotLift.getTalon(2).set(-1);
+        }else{
+            RobotLift.getTalon(1).set(0);
+            RobotLift.getTalon(2).set(0);
+        }
     }
 
 

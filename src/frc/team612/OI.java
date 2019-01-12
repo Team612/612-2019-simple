@@ -8,6 +8,7 @@
 package frc.team612;
 
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -15,6 +16,16 @@ import edu.wpi.first.wpilibj.XboxController;
  */
 public class OI 
 {
+    private final int BUTTON_A=1;
+    private final int BUTTON_B=2;
+    private final int BUTTON_X=3;
+    private final int BUTTON_Y=4;
+    private final int BUTTON_LB=5;
+    private final int BUTTON_LT=9;
+    private final int BUTTON_RB=6;
+    private final int BUTTON_RT=10;
+    private final int BUTTON_BACK=7;
+    private final int BUTTON_START=8;
     // CREATING BUTTONS
     // One type of button is a joystick button which is any button on a
     // joystick.
@@ -24,6 +35,10 @@ public class OI
     // Button button = new JoystickButton(stick, buttonNumber);
     public XboxController driver=new XboxController(RobotMap.driver);
     public XboxController gunner=new XboxController(RobotMap.gunner);
+    public JoystickButton driver_backLift_up=new JoystickButton(driver,BUTTON_LB);
+    public JoystickButton driver_backLift_down=new JoystickButton(driver,BUTTON_LT);
+    public JoystickButton driver_frontLift_up=new JoystickButton(driver,BUTTON_RB);
+    public JoystickButton driver_frontLift_down=new JoystickButton(driver,BUTTON_RT);
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
     // commands the same as any other Button.
