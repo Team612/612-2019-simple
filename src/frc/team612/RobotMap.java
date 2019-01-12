@@ -19,6 +19,10 @@ public class RobotMap
     public static int Talon_FL=2;
     public static int Talon_RR=3;
     public static int Talon_RL=4;
+    public static int Talon_Lift_FR=5;
+    public static int Talon_Lift_FL=6;
+    public static int Talon_Lift_RR=7;
+    public static int Talon_Lift_RL=8;
     public static int driver=0;
     public static int gunner=1;
     // For example to map the left and right motors, you could define the
