@@ -8,6 +8,11 @@
 package frc.team612;
 
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.team612.commands.FlywheelBackward;
+import frc.team612.commands.FlywheelForward;
+
+import java.io.IOException;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -24,6 +29,14 @@ public class OI
     // Button button = new JoystickButton(stick, buttonNumber);
     public XboxController driver=new XboxController(RobotMap.driver);
     public XboxController gunner=new XboxController(RobotMap.gunner);
+    public JoystickButton gunner_button_A = new JoystickButton(gunner,0);
+    public JoystickButton gunner_button_B = new JoystickButton(gunner,1);
+    public OI()  {
+        gunner_button_A.whileHeld(new FlywheelForward());
+        gunner_button_B.whileHeld(new FlywheelBackward());
+
+    }
+
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
     // commands the same as any other Button.

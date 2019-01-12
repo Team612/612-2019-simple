@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team612.subsystems.DriveTrain;
+import frc.team612.subsystems.Flywheel;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,6 +28,7 @@ public class Robot extends TimedRobot
 
     //public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
     public static OI oi;
+public static Flywheel flywheel = new Flywheel();
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
@@ -36,9 +38,9 @@ public class Robot extends TimedRobot
      * used for any initialization code.
      */
     @Override
-    public void robotInit() 
+    public void robotInit()
     {
-        oi = new OI();
+            oi = new OI();
         //chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
