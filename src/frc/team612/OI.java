@@ -8,6 +8,7 @@
 package frc.team612;
 
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -22,8 +23,27 @@ public class OI
     // number it is.
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
-    public XboxController driver=new XboxController(RobotMap.driver);
-    public XboxController gunner=new XboxController(RobotMap.gunner);
+    public static XboxController driver=new XboxController(RobotMap.driver);
+    public static XboxController gunner=new XboxController(RobotMap.gunner);
+    public static JoystickButton driver_button_X    	= new JoystickButton(driver,3);
+    public static JoystickButton driver_button_Y    	= new JoystickButton(driver,4);
+    public static JoystickButton driver_button_LB   	= new JoystickButton(driver,5);
+    public static JoystickButton driver_button_RB   	= new JoystickButton(driver,6);
+    public static JoystickButton driver_button_BCK  	= new JoystickButton(driver,7);
+    public static JoystickButton driver_button_STRT 	= new JoystickButton(driver,8);
+    public static JoystickButton driver_button_LJ   	= new JoystickButton(driver,9);
+    public static JoystickButton driver_button_RJ   	= new JoystickButton(driver,10);
+
+    public static JoystickButton gunner_button_A    	= new JoystickButton(gunner, 1);
+    public static JoystickButton gunner_button_B    	= new JoystickButton(gunner, 2);
+    public static JoystickButton gunner_button_X    	= new JoystickButton(gunner,3);
+    public static JoystickButton gunner_button_Y    	= new JoystickButton(gunner,4);
+    public static JoystickButton gunner_button_LB   	= new JoystickButton(gunner,5);
+    public static JoystickButton gunner_button_RB   	= new JoystickButton(gunner,6);
+    public static JoystickButton gunner_button_BCK  	= new JoystickButton(gunner,7);
+    public static JoystickButton gunner_button_STRT 	= new JoystickButton(gunner,8);
+    public static JoystickButton gunner_button_LJ   	= new JoystickButton(gunner,9);
+    public static JoystickButton gunner_button_RJ   	= new JoystickButton(gunner,10);
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
     // commands the same as any other Button.
