@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.team612.commands.ThreadA;
+import frc.team612.commands.ThreadB;
 import frc.team612.subsystems.DriveTrain;
 
 /**
@@ -30,7 +32,9 @@ public class Robot extends TimedRobot
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
-    public static DriveTrain driveTrain=new DriveTrain();;
+    public static DriveTrain driveTrain=new DriveTrain();
+    public static Thread threadA=new Thread(new ThreadA());
+    public static Thread threadB=new Thread(new ThreadB());
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -39,6 +43,8 @@ public class Robot extends TimedRobot
     public void robotInit() 
     {
         oi = new OI();
+        threadA.start();
+        threadB.start();
         //chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
