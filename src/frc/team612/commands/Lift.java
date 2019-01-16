@@ -29,16 +29,19 @@ public class Lift extends Command {
      */
     @Override
     protected void execute() {
-        if(Robot.oi.driver_backLift_up.get()){
+        if(Robot.oi.driver_backLift_up.get()){//Tests to see whether button is pressed
+            //Sets back pair of talons to go forward
             RobotLift.getTalon(3).set(1);
             RobotLift.getTalon(4).set(1);
-        }else if(Robot.oi.driver_backLift_down.get()){
+        }else if(Robot.oi.driver_backLift_down.get()){//Tests to see whether other button is pressed, adds protection to prevent up and down commands to be sent at the same time
+            //Set back pair of talons to go backwards
             RobotLift.getTalon(3).set(-1);
             RobotLift.getTalon(4).set(-1);
-        }else{
+        }else{//If no button is pressed, set talons to stop
             RobotLift.getTalon(3).set(0);
             RobotLift.getTalon(4).set(0);
         }
+        //Same thing as previous if statement, except applied to front talon set
         if(Robot.oi.driver_frontLift_up.get()){
             RobotLift.getTalon(1).set(1);
             RobotLift.getTalon(2).set(1);
